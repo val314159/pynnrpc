@@ -1,0 +1,8 @@
+import nn
+from msgpack import loads, dumps
+if __name__=='__main__':      
+    print "sub2"
+    s = nn.make_socket('+SUB::tcp://127.0.0.1:6234')
+    nn.subscribe(s)
+    while 1:
+        print "!", s.recv2()

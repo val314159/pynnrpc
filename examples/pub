@@ -1,0 +1,9 @@
+import nn, random, time
+from msgpack import loads, dumps
+if __name__=='__main__':      
+    print "pub2"
+    s = nn.make_socket('-PUB::tcp://127.0.0.1:6234')
+    while 1:
+        d='xx'+str(random.random())
+        s.send2(d)
+        time.sleep(1)
